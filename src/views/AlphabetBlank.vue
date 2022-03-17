@@ -1,19 +1,7 @@
 <template>
   <div class="blank-container">
-    <div class="blank" :class="wordValue[0]">
-      <input class="alphabet-slot" :class="isDisabled" @keydown.enter="onEnterKeyPressed" v-model="inputLetter[0]">
-    </div>
-    <div class="blank" :class="wordValue[1]">
-      <input class="alphabet-slot" :class="isDisabled" @keydown.enter="onEnterKeyPressed" v-model="inputLetter[1]">
-    </div>
-    <div class="blank" :class="wordValue[2]">
-      <input class="alphabet-slot" :class="isDisabled" @keydown.enter="onEnterKeyPressed" v-model="inputLetter[2]">
-    </div>
-    <div class="blank" :class="wordValue[3]">
-      <input class="alphabet-slot" :class="isDisabled" @keydown.enter="onEnterKeyPressed" v-model="inputLetter[3]">
-    </div>
-    <div class="blank" :class="wordValue[4]">
-      <input class="alphabet-slot" :class="isDisabled" @keydown.enter="onEnterKeyPressed" v-model="inputLetter[4]">
+    <div v-for="(idx) in inputLetter" :key="idx" class="blank" :class="wordValue[idx]">
+      <input class="alphabet-slot" :class="isDisabled" @keydown.enter="onEnterKeyPressed" v-model="inputLetter[idx]">
     </div>
   </div>
 </template>

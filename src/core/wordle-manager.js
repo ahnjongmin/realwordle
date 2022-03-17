@@ -1,6 +1,13 @@
+import WORDLIST from "../stuff/word-list"
+
+const getRandomNumber = (num) => {
+    return Math.floor(Math.random() * num)
+}
+
 class WordleManager{
     constructor() {
-        this.answer = 'apple'
+        const length = WORDLIST.WORD5.length;
+        this.answer = WORDLIST.WORD5[getRandomNumber(length)];
     }
 
     checkResult(inputString) {
